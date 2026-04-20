@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent, forwardRef, useRef, useState } from 'react';
+import { Turnstile } from '@marsidev/react-turnstile';
 import { Button } from './Button';
 import { CheckCircle2 } from 'lucide-react';
 
@@ -57,6 +58,7 @@ const Field = forwardRef<HTMLInputElement | HTMLTextAreaElement, FieldProps>(
 export function ContactForm() {
   const [state, setState] = useState<FormState>('idle');
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [cfToken, setCfToken] = useState<string | null>(null);
   const nameRef = useRef<HTMLInputElement | null>(null);
   const successHeadingRef = useRef<HTMLHeadingElement | null>(null);
 
@@ -71,6 +73,7 @@ export function ContactForm() {
       company: String(data.get('company') || '').trim(),
       message: String(data.get('message') || '').trim(),
       website: String(data.get('website') || '').trim(), // honeypot
+      cf_token: cfToken,
     };
 
     if (!payload.name || !payload.email || !payload.message) {
@@ -205,6 +208,15 @@ export function ContactForm() {
         </label>
       </div>
 
+      {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
+        <Turnstile
+          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+          onSuccess={setCfToken}
+          onError={() => setCfToken(null)}
+          onExpire={() => setCfToken(null)}
+        />
+      )}
+
       {errorMsg && (
         <p
           id="contact-error"
@@ -219,7 +231,10 @@ export function ContactForm() {
         type="submit"
         size="lg"
         className="w-full sm:w-auto"
-        disabled={state === 'submitting'}
+        disabled={
+          state === 'submitting' ||
+          (!!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !cfToken)
+        }
       >
         {state === 'submitting' ? 'Sending…' : 'Send message'}
       </Button>
