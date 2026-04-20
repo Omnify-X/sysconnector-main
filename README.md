@@ -49,6 +49,12 @@ CONTACT_TO_EMAIL=contact@sysconnector.com
 - `CONTACT_TO_EMAIL` — recipient of contact-form submissions (default `contact@sysconnector.com`).
 - `CONTACT_TO_NAME` — recipient display name (default `sysConnector`).
 
+**Spam protection:**
+- `NEXT_PUBLIC_TURNSTILE_SITE_KEY` — Cloudflare Turnstile site key (get from dash.cloudflare.com → Turnstile). Without it, the CAPTCHA widget is skipped.
+- `TURNSTILE_SECRET_KEY` — Cloudflare Turnstile secret key. Without it, server-side token verification is skipped.
+- `UPSTASH_REDIS_REST_URL` — Upstash Redis REST URL for rate limiting (get from console.upstash.com). Without it, rate limiting is skipped.
+- `UPSTASH_REDIS_REST_TOKEN` — Upstash Redis REST token. Without it, rate limiting is skipped.
+
 The contact form also sets `replyTo` to the submitter's email, so hitting **Reply** in the inbox replies directly to the contact (not to your `noreply` sender).
 
 ## Project structure
