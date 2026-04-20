@@ -1,0 +1,63 @@
+---
+title: "Getting Started with sysConnector"
+date: "2026-04-18"
+excerpt: "Connect your first lead source to your CRM in under 15 minutes — no code, no spreadsheets, no waiting for IT."
+author: "sysConnector Team"
+tags: ["getting started", "integrations", "how-to"]
+---
+
+Connecting a new lead source to your CRM shouldn't take a sprint. With sysConnector, you can have your first flow running in under 15 minutes.
+
+Here's exactly how to do it.
+
+## Step 1: Connect Your Source
+
+A *source* is anywhere leads come from — your website form, a Facebook Lead Ad, a LinkedIn form, Typeform, or a partner webhook.
+
+From the dashboard, click **Add Source** and choose from the list of supported integrations. For most sources, you'll authenticate with OAuth in two clicks. For webhook-based sources, you'll get a unique URL to paste into the third-party tool.
+
+No API keys to manage. No documentation to read.
+
+## Step 2: Map Your Fields
+
+Once your source is connected, sysConnector will pull in a sample submission so you can see the exact field names the source is sending.
+
+Use the visual mapper to match each incoming field to the right CRM field:
+
+- `first_name` → Contact: First Name
+- `email` → Contact: Email
+- `company_size` → Lead: Company Size (Custom Field)
+
+If your CRM uses different field names, the mapper handles the translation automatically. You can also add **transform rules** — for example, normalising phone numbers to E.164 format, or capitalising names.
+
+## Step 3: Set Your Routing Rules
+
+Routing rules decide which rep or queue receives the lead. Rules can be based on any field:
+
+- Route by geography: leads from Germany → EMEA queue
+- Route by company size: 500+ employees → Enterprise team
+- Round-robin: distribute evenly across five reps
+- Priority override: any lead with `budget > £50k` → senior rep
+
+Rules are evaluated in order. The first match wins.
+
+## Step 4: Go Live
+
+Click **Activate Flow** and your connection is live. From this point, every submission from that source will flow into your CRM within seconds — with the right rep assigned, the record enriched, and a follow-up task already created.
+
+---
+
+## What Happens Next
+
+Most teams add two or three more sources in the same session once they see how fast the first one goes. Common additions:
+
+- Paid social (Facebook, LinkedIn, Google)
+- Outbound enrichment tools (Apollo, Clay)
+- Partner portals and affiliate networks
+- Event registration platforms
+
+Each new source takes less time than the last. The routing rules you've already written usually apply to all of them.
+
+## Need Help?
+
+If you run into anything, reach out via the [contact page](/contact) — we respond to every message within one business day.
