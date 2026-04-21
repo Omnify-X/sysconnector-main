@@ -26,10 +26,16 @@ export function Header() {
 
         <nav className="flex items-center gap-2">
           <Link
+            href="/connectors"
+            className="hidden h-9 items-center rounded-lg px-4 text-sm font-medium text-fg-muted transition hover:bg-bg-sunken hover:text-fg sm:inline-flex"
+          >
+            Connectors
+          </Link>
+          <Link
             href="/blog"
             className="hidden h-9 items-center rounded-lg px-4 text-sm font-medium text-fg-muted transition hover:bg-bg-sunken hover:text-fg sm:inline-flex"
           >
-            Blog
+            Resources
           </Link>
           <Link
             href="/contact"

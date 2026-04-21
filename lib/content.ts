@@ -270,6 +270,8 @@ export const footer = {
     'Built for teams who never want to lose a lead — or lose track of their customers',
   copyright: '© 2026 sysConnector.',
   links: [
+    { label: 'Connectors', href: '/connectors' },
+    { label: 'Resources', href: '/blog' },
     { label: 'Terms of Service', href: '/terms-of-service' },
     { label: 'Privacy Policy', href: '/privacy-policy' },
   ],

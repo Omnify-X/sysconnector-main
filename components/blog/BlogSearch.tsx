@@ -36,7 +36,7 @@ export function BlogSearch({ posts }: { posts: PostMeta[] }) {
       <section className="border-t border-border bg-bg-sunken">
         <Container className="py-10 md:py-14">
           <Reveal>
-            <Eyebrow>Blog</Eyebrow>
+            <Eyebrow>Resources</Eyebrow>
           </Reveal>
           <Reveal delay={80}>
             <h1 className="mt-3 text-[1.75rem] font-semibold leading-tight tracking-tight text-fg md:text-[2.25rem]">
