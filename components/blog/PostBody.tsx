@@ -9,6 +9,7 @@ type ListProps = ComponentPropsWithoutRef<'ul'>;
 type BlockquoteProps = ComponentPropsWithoutRef<'blockquote'>;
 type CodeProps = ComponentPropsWithoutRef<'code'>;
 type PreProps = ComponentPropsWithoutRef<'pre'>;
+type ImgProps = ComponentPropsWithoutRef<'img'>;
 
 const components: MDXRemoteProps['components'] = {
   h2: (props: HeadingProps) => (
@@ -39,6 +40,12 @@ const components: MDXRemoteProps['components'] = {
     <pre className="bg-bg-sunken border border-border rounded-xl p-5 overflow-x-auto text-sm mb-5 font-mono" {...props} />
   ),
   hr: () => <hr className="border-border my-10" />,
+  img: ({ src, alt }: ImgProps) => (
+    <span className="my-8 block overflow-hidden rounded-xl border border-border">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={src} alt={alt ?? ''} className="w-full h-auto block" />
+    </span>
+  ),
 };
 
 export function PostBody({ content }: { content: string }) {
