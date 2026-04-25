@@ -28,7 +28,9 @@ export function BlogSearch({ posts }: { posts: PostMeta[] }) {
   const isSearching = trimmed.length > 0;
 
   const filtered = isSearching ? posts.filter((p) => matches(p, trimmed)) : posts;
-  const [featured, ...rest] = filtered;
+  const featuredIndex = filtered.findIndex((p) => p.featured);
+  const featured = filtered[featuredIndex !== -1 ? featuredIndex : 0];
+  const rest = filtered.filter((p) => p !== featured);
 
   return (
     <>

@@ -14,6 +14,7 @@ export interface PostMeta {
   readTime: number;
   coverImage?: string;
   tags?: string[];
+  featured?: boolean;
 }
 
 export interface Post extends PostMeta {
@@ -43,10 +44,15 @@ export async function getAllPosts(): Promise<PostMeta[]> {
           readTime: calcReadTime(content),
           coverImage: data.coverImage,
           tags: data.tags,
+          featured: data.featured ?? false,
         } satisfies PostMeta;
       }),
   );
-  return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
+  return posts.sort((a, b) => {
+    if (a.featured && !b.featured) return -1;
+    if (!a.featured && b.featured) return 1;
+    return a.date < b.date ? 1 : -1;
+  });
 }
 
 export async function getPost(slug: string): Promise<Post> {
@@ -67,6 +73,7 @@ export async function getPost(slug: string): Promise<Post> {
     readTime: calcReadTime(content),
     coverImage: data.coverImage,
     tags: data.tags,
+    featured: data.featured ?? false,
     content,
   };
 }
