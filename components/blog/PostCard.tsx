@@ -17,21 +17,21 @@ export function PostCard({ post }: { post: PostMeta }) {
       className="group flex flex-col rounded-xl border border-border bg-bg-elevated overflow-hidden transition hover:border-border-strong hover:shadow-md"
     >
       {post.coverImage && (
-        <div className="relative aspect-video w-full overflow-hidden">
+        <div className="relative aspect-[16/9] w-full overflow-hidden shrink-0">
           <Image
             src={post.coverImage}
-            alt=""
+            alt={post.title}
             fill
-            className="object-cover transition group-hover:scale-[1.02]"
+            className="object-cover transition duration-500 group-hover:scale-[1.03]"
           />
         </div>
       )}
-      <div className="flex flex-1 flex-col gap-3 p-6">
+      <div className="flex flex-1 flex-col gap-3 p-5">
         <div className="flex flex-wrap items-center gap-2 text-xs text-fg-subtle">
           <time dateTime={post.date}>{formatDate(post.date)}</time>
           <span aria-hidden>·</span>
           <span>{post.readTime} min read</span>
-          {post.tags && post.tags.length > 0 && (
+          {post.tags?.[0] && (
             <>
               <span aria-hidden>·</span>
               <span className="rounded-full border border-border px-2 py-0.5 font-mono uppercase tracking-wider">
@@ -41,11 +41,11 @@ export function PostCard({ post }: { post: PostMeta }) {
           )}
         </div>
 
-        <h3 className="text-h3 text-fg transition group-hover:text-accent line-clamp-2">
+        <h3 className="text-base font-semibold leading-snug tracking-tight text-fg transition group-hover:text-accent line-clamp-2">
           {post.title}
         </h3>
 
-        <p className="text-[0.95rem] text-fg-muted line-clamp-3 flex-1">
+        <p className="text-sm text-fg-muted line-clamp-3 flex-1 leading-relaxed">
           {post.excerpt}
         </p>
 

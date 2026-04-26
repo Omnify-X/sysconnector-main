@@ -55,6 +55,87 @@ export async function getAllPosts(): Promise<PostMeta[]> {
   });
 }
 
+function slugify(text: string): string {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+export interface KeyFact { q: string; a: string }
+export interface TOCItem { id: string; text: string; level: number }
+
+export interface SummaryItem { label: string; text: string }
+export interface FAQItem { q: string; a: string }
+export interface NextStep { headline: string; body: string; linkText: string; linkUrl: string }
+
+export function parseQuickSummary(content: string): SummaryItem[] {
+  const match = content.match(/^## Quick Summary\n\n([\s\S]*?)(?=\n## )/m);
+  if (!match) return [];
+  return [...match[1].matchAll(/^-\s+\*\*(.+?)\*\*\s+(.+)$/gm)].map((m) => ({
+    label: m[1].replace(/:$/, ''),
+    text: m[2].trim(),
+  }));
+}
+
+export function parseFAQ(content: string): FAQItem[] {
+  const sectionMatch = content.match(/## FAQ\n\n([\s\S]*?)(?=\n---|\n## [^#]|$)/);
+  if (!sectionMatch) return [];
+  const items: FAQItem[] = [];
+  const pattern = /### (.+)\n\n([\s\S]*?)(?=\n### |$)/g;
+  let m;
+  while ((m = pattern.exec(sectionMatch[1])) !== null) {
+    items.push({ q: m[1].trim(), a: m[2].trim() });
+  }
+  return items;
+}
+
+export function parseNextStep(content: string): NextStep | null {
+  const match = content.match(/## Next step\n\n([\s\S]*?)(?=\n---|\n## |$)/i);
+  if (!match) return null;
+  const section = match[1].trim();
+  const headline = (section.match(/^\*\*(.+?)\*\*/) || [])[1]?.replace(/\.$/, '') ?? '';
+  const body = section
+    .replace(/^\*\*.+?\*\*\n+/, '')
+    .replace(/\[.+?\]\(.+?\)\s*$/, '')
+    .trim();
+  const linkMatch = section.match(/\[(.+?)\]\((.+?)\)/);
+  return {
+    headline,
+    body,
+    linkText: linkMatch?.[1] ?? 'Learn more',
+    linkUrl: linkMatch?.[2] ?? '/',
+  };
+}
+
+export function extractMainBody(content: string): string {
+  let body = stripKeyFacts(content);
+  body = body.replace(/^## Quick Summary\n\n[\s\S]*?(?=\n## )/m, '');
+  const hrIndex = body.search(/\n---\n/);
+  if (hrIndex !== -1) body = body.slice(0, hrIndex);
+  return body.trim();
+}
+
+export function extractKeyFacts(content: string): KeyFact[] {
+  const match = content.match(/## Key Facts\n\n([\s\S]*?)(?=\n## )/);
+  if (!match) return [];
+  return match[1].trim().split(/\n\n(?=\*\*)/).flatMap((block) => {
+    const qMatch = block.match(/^\*\*(.+?)\*\*/);
+    if (!qMatch) return [];
+    return [{ q: qMatch[1], a: block.replace(/^\*\*.+?\*\*\n/, '').trim() }];
+  });
+}
+
+export function stripKeyFacts(content: string): string {
+  return content.replace(/## Key Facts\n\n[\s\S]*?(?=\n## )/, '').trimStart();
+}
+
+const SKIP_HEADINGS = new Set(['key facts', 'quick summary', 'faq', 'next step', 'references']);
+
+export function extractTOCHeadings(content: string): TOCItem[] {
+  const stripped = stripKeyFacts(content);
+  return [...stripped.matchAll(/^(#{2,3})\s+(.+)$/gm)]
+    .filter((m) => !SKIP_HEADINGS.has(m[2].trim().toLowerCase()))
+    .map((m) => ({ level: m[1].length, text: m[2].trim(), id: slugify(m[2].trim()) }));
+}
+
 export async function getPost(slug: string): Promise<Post> {
   const filepath = path.join(POSTS_DIR, `${slug}.mdx`);
   let raw: string;

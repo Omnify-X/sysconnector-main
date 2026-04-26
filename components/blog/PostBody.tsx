@@ -1,6 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import type { MDXRemoteProps } from 'next-mdx-remote/rsc';
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 type HeadingProps = ComponentPropsWithoutRef<'h2'>;
 type ParaProps = ComponentPropsWithoutRef<'p'>;
@@ -11,12 +11,23 @@ type CodeProps = ComponentPropsWithoutRef<'code'>;
 type PreProps = ComponentPropsWithoutRef<'pre'>;
 type ImgProps = ComponentPropsWithoutRef<'img'>;
 
+function toId(children: ReactNode): string {
+  return String(children ?? '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
 const components: MDXRemoteProps['components'] = {
-  h2: (props: HeadingProps) => (
-    <h2 className="text-xl font-semibold tracking-tight text-fg mt-10 mb-3 first:mt-0" {...props} />
+  h2: ({ children, ...props }: HeadingProps) => (
+    <h2 id={toId(children)} className="text-xl font-semibold tracking-tight text-fg mt-10 mb-3 first:mt-0" {...props}>
+      {children}
+    </h2>
   ),
-  h3: (props: HeadingProps) => (
-    <h3 className="text-base font-semibold text-fg mt-7 mb-2" {...props} />
+  h3: ({ children, ...props }: HeadingProps) => (
+    <h3 id={toId(children)} className="text-base font-semibold text-fg mt-7 mb-2" {...props}>
+      {children}
+    </h3>
   ),
   p: (props: ParaProps) => (
     <p className="text-base text-fg-muted leading-[1.8] mb-5" {...props} />
