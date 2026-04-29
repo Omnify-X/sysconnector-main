@@ -16,7 +16,7 @@ export function AuthorBio() {
         </div>
 
         <p className="text-sm text-fg-muted leading-relaxed">
-          Michelle Low is the founder of Omnify X and creator of sysConnector. She enjoys turning messy marketing and CRM setups into simple, connected systems that actually work in real time. Michelle writes about marketing automation, system integrations, customer data, and practical ways to fix broken lead flows—based on what she's building and testing day to day.
+          Michelle Low is the founder of Omnify X and creator of sysConnector. She enjoys turning messy marketing and CRM setups into simple, connected systems that actually work in real time. Michelle writes about marketing automation, system integrations, customer data, and practical ways to fix broken lead flows&mdash;based on what she&apos;s building and testing day to day.
         </p>
 
         <div className="mt-1 flex flex-wrap gap-4">
