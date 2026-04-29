@@ -8,6 +8,7 @@ import { Container } from '@/components/ui/Container';
 import { PostBody } from '@/components/blog/PostBody';
 import { ReadingProgress } from '@/components/blog/ReadingProgress';
 import { PostCard } from '@/components/blog/PostCard';
+import { AuthorBio } from '@/components/blog/AuthorBio';
 import {
   getAllPosts,
   getPost,
@@ -241,6 +242,13 @@ export default async function PostPage({ params }: Props) {
             </Container>
           </section>
         )}
+
+        {/* ── Author bio ── */}
+        <section>
+          <Container className="pb-10">
+            <AuthorBio />
+          </Container>
+        </section>
 
         {/* ── More articles ── */}
         {morePosts.length > 0 && (
