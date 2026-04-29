@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export function AuthorBio() {
   return (
-    <div className="flex flex-col gap-4 rounded-2xl border border-border bg-bg-elevated px-6 py-5">
+    <div className="flex flex-col gap-4 rounded-2xl border border-border bg-bg-elevated px-4 py-4 sm:px-6 sm:py-5">
       <p className="text-xs font-semibold uppercase tracking-widest text-fg-subtle">About the author</p>
       <div className="flex items-start gap-4">
       <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full">
