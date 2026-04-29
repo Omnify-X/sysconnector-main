@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDown, BookOpen, LifeBuoy } from 'lucide-react';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
+import { MobileNav } from '@/components/layout/MobileNav';
 
 export function Header() {
   return (
@@ -77,6 +78,7 @@ export function Header() {
             Contact
           </Link>
           <ThemeToggle />
+          <MobileNav />
         </nav>
       </div>
     </header>
