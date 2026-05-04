@@ -56,6 +56,8 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{ __html: themeInitScript }}
         />
+        <script async defer src="https://app.visitortracking.com/assets/js/tracer.js" />
+        <script dangerouslySetInnerHTML={{ __html: `function init_tracer(){var tracer=new Tracer({websiteId:'46eb1ec0-431a-474b-b06a-eb691bb3e50a',async:true,debug:false});}` }} />
       </head>
       <body className="min-h-screen antialiased" suppressHydrationWarning>
         {children}
