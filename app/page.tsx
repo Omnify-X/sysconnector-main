@@ -1,6 +1,5 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { SignupModalProvider } from '@/components/ui/SignupModal';
 import { Hero } from '@/components/sections/Hero';
 import { FlowDiagram } from '@/components/sections/FlowDiagram';
 import { ProblemIntro } from '@/components/sections/ProblemIntro';
@@ -16,7 +15,7 @@ import { FinalCTA } from '@/components/sections/FinalCTA';
 
 export default function HomePage() {
   return (
-    <SignupModalProvider>
+    <>
       <Header />
       <main>
         <Hero />
@@ -33,6 +32,6 @@ export default function HomePage() {
         <FinalCTA />
       </main>
       <Footer />
-    </SignupModalProvider>
+    </>
   );
 }
