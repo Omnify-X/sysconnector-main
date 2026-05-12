@@ -41,6 +41,7 @@ export const flowDiagram = {
       'Adobe Campaign',
       'Brevo',
       'HubSpot',
+      'Salesforce CRM',
       'Google Sheets',
       'SFTP',
       'Webhook',
