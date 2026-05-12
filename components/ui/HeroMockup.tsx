@@ -113,7 +113,7 @@ export function HeroMockup() {
           <span className="h-2.5 w-2.5 rounded-full bg-border-strong" />
           <span className="h-2.5 w-2.5 rounded-full bg-border-strong" />
           <div className="ml-4 flex items-center gap-1.5 rounded-md border border-border bg-bg px-2.5 py-1 font-mono text-[0.65rem] text-fg-subtle">
-            sysconnector.app / customer-profiles
+            app.sysconnector.com / customer-profiles
           </div>
         </div>
 
