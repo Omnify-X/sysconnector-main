@@ -85,6 +85,13 @@ export const connectors: Connector[] = [
     name: 'Salesforce',
     category: 'CRM & Marketing',
     description: 'Sync leads and contacts directly into Salesforce CRM.',
+    status: 'live',
+  },
+  {
+    slug: 'microsoft-dynamics',
+    name: 'Microsoft Dynamics',
+    category: 'CRM & Marketing',
+    description: 'Push leads and contacts into Microsoft Dynamics 365 CRM.',
     status: 'coming-soon',
   },
   {
