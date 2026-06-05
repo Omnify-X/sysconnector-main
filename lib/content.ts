@@ -5,15 +5,15 @@
 
 export const hero = {
   headline:
-    'Capture every lead from your social media campaigns and see every customer in one place',
+    'Purpose-built for the ad platform to CRM flow — not a horizontal automation tool repurposed for it',
   subhead:
-    'sysConnector collects leads from Meta, LinkedIn, TikTok, WhatsApp, Google Sheets, and SFTP, syncs them instantly to your CRM or marketing tools, and gives your team a single, clear view of every customer.',
+    'sysConnector syncs leads in real time from Meta, LinkedIn, and TikTok, turns WhatsApp into a lead source with a native bot, and builds unified Customer Profiles across every source — then routes everything to HubSpot, Salesforce, and more.',
   italicNote:
-    'With AI-assisted data mapping to keep your customer data clean from day one.',
+    'With AI-assisted field mapping to keep your CRM clean from day one.',
   bullets: [
-    'No broken integrations.',
-    'No missed opportunities.',
-    'No scattered data.',
+    'Real-time sync from every ad platform.',
+    'WhatsApp Bot that captures leads without an ad form.',
+    'Unified Customer Profiles across all your sources.',
   ],
   cta: 'Create Free Account',
 };
@@ -150,55 +150,56 @@ export const breakingLeadFlow = {
 };
 
 export const solution = {
-  heading: 'One place to manage every lead.',
+  heading: 'Built differently — because the problem needed a different tool.',
   paragraphs: [
-    'sysConnector automatically collects leads from your sources and sends them to your CRM and marketing platforms.',
-    'Instead of juggling multiple systems, your leads flow through one reliable platform.',
+    'Most sync tools move data between workflows. sysConnector is built specifically for the ad platform to CRM flow — and it goes further than any sync tool has before.',
+    'It expands where leads come from, including a native WhatsApp Bot that turns conversations into structured CRM leads without an ad form. It syncs every source in real time. And it builds unified Customer Profiles across all your ad sources — the kind of visibility that previously only existed inside enterprise data platforms.',
+    'One platform. Four tools replaced.',
   ],
 };
 
 export const features = {
-  heading: 'What You Can Do with sysConnector',
+  heading: 'What makes sysConnector different',
   cards: [
     {
-      title: 'Capture leads from everywhere',
-      body: 'Collect leads from social media, messaging apps, files, and forms all in one place.',
-      note: 'No more leads sitting inside different platforms.',
+      title: 'WhatsApp Bot: turn conversations into leads',
+      body: 'Build a bot with your qualifying questions. Someone messages it, answers your questions, and their responses arrive in your CRM as a structured lead — no ad form required.',
+      note: 'The only lead sync platform with a native WhatsApp lead source.',
     },
     {
-      title: 'Sync leads and customer data in real time',
-      body: 'Send leads instantly to your CRM and marketing tools, and keep customer data up to date across systems.',
-      note: 'No delays. No manual work.',
+      title: 'Real-time sync from every ad platform',
+      body: 'Capture and route leads from Meta, LinkedIn, and TikTok the moment they submit — no polling, no delays, no missed enquiries.',
+      note: 'Stays connected even when ad platforms update their APIs.',
     },
     {
-      title: 'See every customer in one place',
-      body: 'Bring all your leads together into a single, clear customer view.',
-      note: 'Know where each lead came from and how they move across your tools.',
+      title: 'Unified Customer Profiles across all sources',
+      body: 'Every lead from every platform lands in one structured profile. See who\'s converting, from where, across all your campaigns — without building a CDP from scratch.',
+      note: 'The kind of visibility that used to require an enterprise data platform and a developer.',
     },
     {
-      title: 'Transform and clean your data before it lands',
-      body: 'Standardise formats, map fields, and clean messy data before it reaches your CRM.',
-      note: '',
+      title: 'Transform and clean data before it lands',
+      body: 'Split names, standardise phone formats, map custom fields, and mask PII before data reaches your CRM. No developer needed.',
+      note: 'Clean data in. Clean CRM out.',
     },
     {
-      title: 'Track every sync with full visibility',
-      body: 'See what synced, what failed, and why.',
-      note: 'Fix issues quickly without guessing.',
+      title: 'Project workspaces for agencies',
+      body: 'Each client gets their own workspace. Connections, leads, and data stay isolated — no shared tangles, no accidental cross-client exposure.',
+      note: 'The only lead sync tool built for multi-client agency workflows.',
     },
     {
-      title: 'Work with your team securely',
-      body: 'Invite team members, control access by project, and protect customer data with built-in security.',
-      note: '',
+      title: 'Full sync visibility and instant alerts',
+      body: 'See every sync, every failure, and every field mismatch in real time. Know the moment something breaks — before your client does.',
+      note: 'No more finding out days later that leads went missing.',
     },
   ],
 };
 
 export const customerProfile = {
-  heading: 'Every lead becomes a structured customer profile',
+  heading: 'Every lead becomes a unified Customer Profile',
   quote:
-    'sysConnector brings your leads together into a single customer view built on clean and consistent data.',
+    'The kind of single customer view across all your ad sources that previously lived only inside enterprise data platforms — now available without a developer or a six-figure contract.',
   caption:
-    'With AI-assisted mapping, sysConnector standardises data across sources creating a clean foundation for future identity matching and insights.',
+    'AI-assisted field mapping standardises data across Meta, LinkedIn, TikTok, and WhatsApp into one consistent profile — creating a clean foundation for attribution, segmentation, and follow-up.',
 };
 
 export const targetAudience = {
@@ -249,21 +250,21 @@ export const futureIntegrations = {
 };
 
 export const finalCta = {
-  heading: 'Want to see if SysConnector fits your stack?',
+  heading: "One platform. Four tools replaced.",
   subhead:
-    'Built for teams managing multiple integrations (and multiple clients)',
-  body: 'If you’re juggling several systems, campaigns, or client stacks — SysConnector gives you one place to manage everything cleanly.',
+    "Most teams running social ad campaigns are stitching together a lead sync tool, a WhatsApp bot, a customer data platform, and an agency workspace tool. sysConnector is all four.",
+  body: "If you’re juggling several systems, campaigns, or client stacks — sysConnector gives you one place to manage everything cleanly.",
   bullets: [
-    'Organise integrations into projects',
-    'Assign team members only what they need',
-    'Hide PII from external users',
-    'Transform data before sync so CRMs stay clean',
+    "WhatsApp Bot that turns conversations into CRM leads",
+    "Unified Customer Profiles across every ad source",
+    "Project workspaces that keep client data isolated",
+    "PII masking so agencies never see what they shouldn’t",
   ],
   pitch:
-    'Try SysConnector early access and see how much lighter integration management feels when everything is in one place.',
-  cta: 'Show Me How It Works',
+    "sysConnector isn’t just a sync tool. It’s the marketing data hub lean teams have been stitching together across four products.",
+  cta: "Get Started Free",
   closingItalic:
-    'The only question is: Would it be helpful to stop worrying whether your syncs are working?',
+    "The only question is: Would it be helpful to stop worrying whether your syncs are working?",
 };
 
 export const footer = {
