@@ -7,8 +7,6 @@ export const hero = {
   headline: 'Purpose-built for social lead ads and messaging apps.',
   subhead:
     'Capture leads in real time from every social lead ad platform and messaging app — WhatsApp today, more to come. sysConnector builds unified Customer Profiles across every source and routes them to HubSpot, Salesforce, Adobe Campaign, and more.',
-  italicNote:
-    'With AI-assisted field mapping to keep your CRM clean from day one.',
   bullets: [
     'Real-time sync from every social lead ad platform.',
     'Messaging bots that capture leads without an ad form.',
