@@ -30,12 +30,6 @@ export function Hero() {
             </p>
           </Reveal>
 
-          <Reveal delay={240}>
-            <p className="mx-auto mt-4 max-w-2xl text-sm text-fg-subtle md:text-base">
-              {hero.italicNote}
-            </p>
-          </Reveal>
-
           <Reveal delay={320}>
             <ul className="mx-auto mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
               {hero.bullets.map((b) => (
