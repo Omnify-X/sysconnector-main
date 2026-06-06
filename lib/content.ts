@@ -168,7 +168,7 @@ export const features = {
     },
     {
       title: 'Real-time sync from every social lead ad platform',
-      body: 'Capture and route leads from Meta, LinkedIn, and TikTok the moment they submit — no polling, no delays, no missed enquiries.',
+      body: 'Capture and route leads from Meta, LinkedIn, and TikTok the moment they submit — no polling, no delays, no missed enquiries. Fields are transformed and cleaned in transit so your CRM stays consistent from day one.',
       note: 'Stays connected even when ad platforms update their APIs.',
     },
     {
@@ -177,19 +177,14 @@ export const features = {
       note: 'The kind of visibility that used to require an enterprise data platform and a developer.',
     },
     {
-      title: 'Transform and clean data before it lands',
-      body: 'Split names, standardise phone formats, map custom fields, and mask PII before data reaches your CRM. No developer needed.',
-      note: 'Clean data in. Clean CRM out.',
-    },
-    {
       title: 'Enterprise-grade security',
-      body: 'Data is encrypted at rest and in transit. Role-based permissions mean team members only access what they need. Full audit logs give you a complete record of every sync and every change.',
-      note: 'PII masking ensures external users and agencies only ever see what they\'re meant to.',
+      body: 'Data is encrypted at rest and in transit. Role-based permissions mean team members only access what they need. PII masking ensures external users and agencies never see what they shouldn\'t. Full audit logs give you a complete record of every sync and every change.',
+      note: 'Built for teams that handle sensitive customer data across multiple clients.',
     },
     {
-      title: 'Project workspaces for agencies',
-      body: 'Each client gets their own workspace. Connections, leads, and data stay isolated — no shared tangles, no accidental cross-client exposure.',
-      note: 'The only lead sync tool built for multi-client agency workflows.',
+      title: 'Project workspaces for every team',
+      body: 'Organise your connections, leads, and data into separate workspaces — by client, brand, campaign, or team. Everything stays isolated, nothing bleeds across projects.',
+      note: 'Built for agencies, enterprise teams, and anyone managing more than one integration at a time.',
     },
     {
       title: 'Full sync visibility and instant alerts',

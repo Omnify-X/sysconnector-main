@@ -6,14 +6,13 @@ import {
   Inbox,
   Zap,
   Eye,
-  Wand2,
   Shield,
   Layers,
   Activity,
   type LucideIcon,
 } from 'lucide-react';
 
-const icons: LucideIcon[] = [Inbox, Zap, Eye, Wand2, Shield, Layers, Activity];
+const icons: LucideIcon[] = [Inbox, Zap, Eye, Shield, Layers, Activity];
 
 export function Features() {
   return (
@@ -31,9 +30,8 @@ export function Features() {
         <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {features.cards.map((card, i) => {
             const Icon = icons[i] ?? Inbox;
-            const isLastOdd = features.cards.length % 3 !== 0 && i === features.cards.length - 1;
             return (
-              <Reveal key={card.title} delay={i * 60} className={isLastOdd ? 'md:col-span-2 lg:col-span-1 lg:col-start-2' : ''}>
+              <Reveal key={card.title} delay={i * 60}>
                 <article className="flex h-full flex-col gap-4 rounded-xl border border-border bg-bg-elevated p-6 transition hover:border-border-strong">
                   <span
                     aria-hidden
