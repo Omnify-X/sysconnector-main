@@ -3,7 +3,7 @@ import { Reveal } from '@/components/ui/Reveal';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { CustomerProfileMockup } from '@/components/ui/CustomerProfileMockup';
 import { customerProfile } from '@/lib/content';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, Wand2, BrainCircuit } from 'lucide-react';
 
 export function CustomerProfile() {
   return (
@@ -41,6 +41,19 @@ export function CustomerProfile() {
               <p className="mt-6 text-base leading-relaxed text-fg-muted">
                 {customerProfile.caption}
               </p>
+              <ul className="mt-6 flex flex-col gap-4">
+                {customerProfile.aiFeatures.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-accent/10 text-accent">
+                      {i === 0 ? <Wand2 size={14} strokeWidth={2} /> : <BrainCircuit size={14} strokeWidth={2} />}
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold text-fg">{feature.label}</p>
+                      <p className="mt-0.5 text-sm leading-relaxed text-fg-muted">{feature.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </Reveal>
           </div>
 

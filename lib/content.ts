@@ -5,14 +5,14 @@
 
 export const hero = {
   headline:
-    'Purpose-built for the ad platform to CRM flow — not a horizontal automation tool repurposed for it',
+    'Purpose-built for social lead ads and messaging apps — not a horizontal automation tool repurposed for either',
   subhead:
-    'sysConnector syncs leads in real time from Meta, LinkedIn, and TikTok, turns WhatsApp into a lead source with a native bot, and builds unified Customer Profiles across every source — then routes everything to HubSpot, Salesforce, and more.',
+    'sysConnector syncs leads in real time from every social lead ad platform, turns messaging apps into a lead source with native bots — starting with WhatsApp — and builds unified Customer Profiles across every source, then routes everything to HubSpot, Salesforce, and more.',
   italicNote:
     'With AI-assisted field mapping to keep your CRM clean from day one.',
   bullets: [
-    'Real-time sync from every ad platform.',
-    'WhatsApp Bot that captures leads without an ad form.',
+    'Real-time sync from every social lead ad platform.',
+    'Messaging bots that capture leads without an ad form.',
     'Unified Customer Profiles across all your sources.',
   ],
   cta: 'Create Free Account',
@@ -152,8 +152,8 @@ export const breakingLeadFlow = {
 export const solution = {
   heading: 'Built differently — because the problem needed a different tool.',
   paragraphs: [
-    'Most sync tools move data between workflows. sysConnector is built specifically for the ad platform to CRM flow — and it goes further than any sync tool has before.',
-    'It expands where leads come from, including a native WhatsApp Bot that turns conversations into structured CRM leads without an ad form. It syncs every source in real time. And it builds unified Customer Profiles across all your ad sources — the kind of visibility that previously only existed inside enterprise data platforms.',
+    'Most sync tools move data between workflows. sysConnector is built specifically for social lead ads and messaging apps — and it goes further than any sync tool has before.',
+    'It expands where leads come from — native messaging bots turn conversations into structured CRM leads without an ad form. WhatsApp is the start; more messaging platforms are on the way. It syncs every source in real time. And it builds unified Customer Profiles across all your ad and messaging sources — the kind of visibility that previously only existed inside enterprise data platforms.',
     'One platform. Four tools replaced.',
   ],
 };
@@ -162,12 +162,12 @@ export const features = {
   heading: 'What makes sysConnector different',
   cards: [
     {
-      title: 'WhatsApp Bot: turn conversations into leads',
-      body: 'Build a bot with your qualifying questions. Someone messages it, answers your questions, and their responses arrive in your CRM as a structured lead — no ad form required.',
-      note: 'The only lead sync platform with a native WhatsApp lead source.',
+      title: 'Messaging bots: turn conversations into leads',
+      body: 'Build a bot with your qualifying questions. Someone messages it, answers your questions, and their responses arrive in your CRM as a structured lead — no ad form required. Starting with WhatsApp, with more messaging platforms to follow.',
+      note: 'The only lead sync platform with native messaging bots as a lead source.',
     },
     {
-      title: 'Real-time sync from every ad platform',
+      title: 'Real-time sync from every social lead ad platform',
       body: 'Capture and route leads from Meta, LinkedIn, and TikTok the moment they submit — no polling, no delays, no missed enquiries.',
       note: 'Stays connected even when ad platforms update their APIs.',
     },
@@ -180,6 +180,11 @@ export const features = {
       title: 'Transform and clean data before it lands',
       body: 'Split names, standardise phone formats, map custom fields, and mask PII before data reaches your CRM. No developer needed.',
       note: 'Clean data in. Clean CRM out.',
+    },
+    {
+      title: 'Enterprise-grade security',
+      body: 'Data is encrypted at rest and in transit. Role-based permissions mean team members only access what they need. Full audit logs give you a complete record of every sync and every change.',
+      note: 'PII masking ensures external users and agencies only ever see what they\'re meant to.',
     },
     {
       title: 'Project workspaces for agencies',
@@ -199,7 +204,17 @@ export const customerProfile = {
   quote:
     'The kind of single customer view across all your ad sources that previously lived only inside enterprise data platforms — now available without a developer or a six-figure contract.',
   caption:
-    'AI-assisted field mapping standardises data across Meta, LinkedIn, TikTok, and WhatsApp into one consistent profile — creating a clean foundation for attribution, segmentation, and follow-up.',
+    'Every lead from every source lands in one structured profile — clean, consistent, and ready for attribution, segmentation, and follow-up.',
+  aiFeatures: [
+    {
+      label: 'AI field mapping',
+      body: 'sysConnector suggests how your source fields map to your CRM fields — so your data lands clean without manual matching or a developer. Only field names go to the AI, never your customer data.',
+    },
+    {
+      label: 'AI profile insights',
+      body: 'Open any profile and get a plain-English summary — engagement history, data completeness gaps, and quality flags. PII is masked before anything reaches the AI.',
+    },
+  ],
 };
 
 export const targetAudience = {
@@ -252,10 +267,10 @@ export const futureIntegrations = {
 export const finalCta = {
   heading: "One platform. Four tools replaced.",
   subhead:
-    "Most teams running social ad campaigns are stitching together a lead sync tool, a WhatsApp bot, a customer data platform, and an agency workspace tool. sysConnector is all four.",
+    "Most teams running social lead ad campaigns are stitching together a lead sync tool, messaging bots, a customer data platform, and an agency workspace tool. sysConnector is all four.",
   body: "If you’re juggling several systems, campaigns, or client stacks — sysConnector gives you one place to manage everything cleanly.",
   bullets: [
-    "WhatsApp Bot that turns conversations into CRM leads",
+    "Messaging bots that turn conversations into CRM leads — WhatsApp first, more coming",
     "Unified Customer Profiles across every ad source",
     "Project workspaces that keep client data isolated",
     "PII masking so agencies never see what they shouldn’t",
