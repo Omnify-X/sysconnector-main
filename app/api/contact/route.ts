@@ -1,15 +1,4 @@
 import { NextResponse } from 'next/server';
-import { Ratelimit } from '@upstash/ratelimit';
-import { Redis } from '@upstash/redis';
-
-const ratelimit =
-  process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
-    ? new Ratelimit({
-        redis: Redis.fromEnv(),
-        limiter: Ratelimit.slidingWindow(5, '1 h'),
-        prefix: 'contact',
-      })
-    : null;
 
 /**
  * POST /api/contact
@@ -58,18 +47,6 @@ export async function POST(request: Request) {
 
   if (!body || typeof body !== 'object') {
     return NextResponse.json({ error: 'Invalid request body.' }, { status: 400 });
-  }
-
-  // Rate limiting: 5 submissions per IP per hour
-  if (ratelimit) {
-    const ip = request.headers.get('x-forwarded-for')?.split(',')[0].trim() ?? 'anonymous';
-    const { success } = await ratelimit.limit(ip);
-    if (!success) {
-      return NextResponse.json(
-        { error: 'Too many requests. Please try again later.' },
-        { status: 429 },
-      );
-    }
   }
 
   const raw = body as Record<string, unknown>;
