@@ -4,13 +4,13 @@
  */
 
 export const hero = {
-  headline: 'Purpose-built for social lead ads and messaging apps.',
+  headline: 'Your social ad platforms know more about your leads than your CRM does.',
   subhead:
-    'Capture leads in real time from every social lead ad platform and messaging app — WhatsApp today, more to come. sysConnector builds unified Customer Profiles across every source and routes them to HubSpot, Salesforce, Adobe Campaign, and more.',
+    'Capture leads in real time from your social lead ads and messaging apps into a unified Customer Profile — automatically routed to HubSpot, Salesforce, Adobe Campaign, and more.',
   bullets: [
-    'Real-time sync from every social lead ad platform.',
+    'Leads from Meta, LinkedIn, TikTok — synced the moment they\'re captured.',
     'Messaging bots that capture leads without an ad form.',
-    'Unified Customer Profiles across all your sources.',
+    'One clean profile per customer, no matter where they came from.',
   ],
   cta: 'Create Free Account',
 };
