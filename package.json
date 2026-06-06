@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@marsidev/react-turnstile": "^1.5.0",
+    "@vercel/speed-insights": "^2.0.0",
     "geist": "^1.4.2",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.469.0",
