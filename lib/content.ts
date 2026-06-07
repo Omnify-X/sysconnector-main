@@ -98,7 +98,7 @@ export const painPoints = {
   familiarHeading: 'Sound familiar?',
   familiarQuotes: [
     '“We’re using Zapier but it randomly stops.”',
-    '“Our CRM is full of duplicates and incomplete records.”',
+    '”Our leads sit in Meta for hours before anyone follows up.”',
     '“Marketing and sales argue because the data doesn’t match.”',
     '“Agencies need access… but they shouldn’t see customer PII.”',
   ],
@@ -120,7 +120,7 @@ export const breakingLeadFlow = {
       body: 'Leads come from Meta, LinkedIn, TikTok, WhatsApp, and more – but each lives in a different system. Most integration tools just move data between workflows, so you still don’t get a clear, unified view of your customers.',
     },
     {
-      title: 'Field mismatches, messy data, duplicate records',
+      title: 'Field mismatches and messy data',
       body: 'Your systems don’t agree on what a “lead” looks like. So your data becomes inconsistent and your reporting is never clean.',
     },
     {
