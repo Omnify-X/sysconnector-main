@@ -58,6 +58,20 @@ export const connectors: Connector[] = [
     description: 'Connect Google Lead Form extensions directly to your CRM.',
     status: 'coming-soon',
   },
+  {
+    slug: 'instagram-dm',
+    name: 'Instagram DM',
+    category: 'Advertising & Social',
+    description: 'Capture and route leads from Instagram Direct Messages.',
+    status: 'live',
+  },
+  {
+    slug: 'facebook-messenger',
+    name: 'Facebook Messenger',
+    category: 'Advertising & Social',
+    description: 'Route leads captured via Facebook Messenger conversations.',
+    status: 'live',
+  },
   // CRM & Marketing
   {
     slug: 'hubspot',
@@ -121,6 +135,13 @@ export const connectors: Connector[] = [
     name: 'SFTP',
     category: 'Data & Files',
     description: 'Transfer lead files securely over SFTP on a schedule.',
+    status: 'live',
+  },
+  {
+    slug: 'notion',
+    name: 'Notion',
+    category: 'Data & Files',
+    description: 'Sync leads into a Notion database in real time.',
     status: 'live',
   },
   // Developer

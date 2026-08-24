@@ -17,7 +17,7 @@ export function Hero() {
       <Container className="section-y relative">
         <div className="mx-auto max-w-4xl text-center">
           <Reveal>
-            <Eyebrow>Early Access · Lead Sync Platform</Eyebrow>
+            <Eyebrow>Early Access · Social Lead & Messaging Platform</Eyebrow>
           </Reveal>
 
           <Reveal delay={80}>
