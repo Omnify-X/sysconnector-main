@@ -6,10 +6,10 @@
 export const hero = {
   headline: 'Your social ad platforms know more about your leads than your CRM does.',
   subhead:
-    'Capture leads in real time from your social lead ads and messaging apps into a unified Customer Profile — automatically routed to HubSpot, Salesforce, Adobe Campaign, and more.',
+    'Capture leads in real time from social ads and DMs, auto-reply to comments and conversations on WhatsApp, Instagram, and Messenger, and keep one unified Customer Profile — synced automatically to HubSpot, Salesforce, Adobe Campaign, and more.',
   bullets: [
     'Leads from Meta, LinkedIn, TikTok — synced the moment they\'re captured.',
-    'Messaging bots that capture leads without an ad form.',
+    'Auto-reply to comments and DMs on WhatsApp, Instagram, and Messenger — no one waits on a response.',
     'One clean profile per customer, no matter where they came from.',
   ],
   cta: 'Create Free Account',
@@ -23,6 +23,8 @@ export const flowDiagram = {
       'LinkedIn',
       'TikTok',
       'WhatsApp',
+      'Instagram DM',
+      'Facebook Messenger',
       'Google Sheets',
       'Web Forms',
       'Flat Files',
@@ -30,7 +32,7 @@ export const flowDiagram = {
   },
   hub: {
     title: 'sysConnector',
-    subtitle: 'Lead Sync + Customer Profiles',
+    subtitle: 'Sync + Auto-Reply + Customer Profiles',
   },
   destinations: {
     title: 'CRM & Marketing Platforms',
@@ -39,6 +41,7 @@ export const flowDiagram = {
       'Brevo',
       'HubSpot',
       'Salesforce CRM',
+      'Notion',
       'Google Sheets',
       'SFTP',
       'Webhook',
@@ -59,7 +62,7 @@ export const problemIntro = {
     'integrations that silently break',
     'CRM data that becomes outdated',
     'delayed follow-ups',
-    'messy customer data',
+    'comments and DMs piling up with no one tracking them',
     'hours spent troubleshooting data sync issues',
   ],
   closing: [
@@ -77,6 +80,8 @@ export const painPoints = {
     'LinkedIn Lead Forms',
     'TikTok campaigns',
     'WhatsApp conversations',
+    'Instagram comments & DMs',
+    'Messenger conversations',
     'Google Sheets',
     'SFTP files',
     'CSV files',
@@ -101,6 +106,7 @@ export const painPoints = {
     '”Our leads sit in Meta for hours before anyone follows up.”',
     '“Marketing and sales argue because the data doesn’t match.”',
     '“Agencies need access… but they shouldn’t see customer PII.”',
+    '“Someone comments ‘price?’ on our ad and we reply six hours later — if at all.”',
   ],
   closingQuestion:
     'What if your team didn’t have to babysit syncs ever again?',
@@ -118,6 +124,10 @@ export const breakingLeadFlow = {
     {
       title: 'Leads scattered across tools – no single customer view',
       body: 'Leads come from Meta, LinkedIn, TikTok, WhatsApp, and more – but each lives in a different system. Most integration tools just move data between workflows, so you still don’t get a clear, unified view of your customers.',
+    },
+    {
+      title: 'Comments and DMs get answered too late — or not at all',
+      body: 'A prospect comments or messages when intent is highest. If a human has to notice and reply manually, that moment is gone by the time anyone gets to it.',
     },
     {
       title: 'Field mismatches and messy data',
@@ -150,7 +160,7 @@ export const solution = {
   heading: 'Built differently — because the problem needed a different tool.',
   paragraphs: [
     'Most sync tools move data between workflows. sysConnector is built specifically for social lead ads and messaging apps — and it goes further than any sync tool has before.',
-    'It expands where leads come from — native messaging bots turn conversations into structured CRM leads without an ad form. WhatsApp is the start; more messaging platforms are on the way. It syncs every source in real time. And it builds unified Customer Profiles across all your ad and messaging sources — the kind of visibility that previously only existed inside enterprise data platforms.',
+    'It expands where leads come from — native bots auto-reply to comments and DMs and turn conversations into structured CRM leads, without an ad form. Live now on WhatsApp, Instagram, and Messenger. It syncs every source in real time. And it builds unified Customer Profiles across all your ad and messaging sources — the kind of visibility that previously only existed inside enterprise data platforms.',
     'One platform. Four tools replaced.',
   ],
 };
@@ -159,9 +169,14 @@ export const features = {
   heading: 'What makes sysConnector different',
   cards: [
     {
-      title: 'Messaging bots: turn conversations into leads',
-      body: 'Build a bot with your qualifying questions. Someone messages it, answers your questions, and their responses arrive in your CRM as a structured lead — no ad form required. Starting with WhatsApp, with more messaging platforms to follow.',
-      note: 'The only lead sync platform with native messaging bots as a lead source.',
+      title: 'Comment-to-DM: catch leads the moment they show intent',
+      body: 'Set trigger keywords for any post — someone comments "price?" or "info" and your bot opens a DM automatically, no manual monitoring required. The conversation continues in-thread until it\'s qualified.',
+      note: 'The only lead sync platform where a public comment triggers a private, qualifying conversation automatically.',
+    },
+    {
+      title: 'Give your bot a persona — and rules for what it does next',
+      body: 'Define an AI persona so every reply sounds like your brand, then set response rules per keyword: the action to take and the intent behind it — capture a lead, hand over a CTA, send a promo code, or surface your T&Cs. No developer, no flowchart tool.',
+      note: 'Configure once; every comment and DM after that follows your rules, not a rep\'s memory of the promo code.',
     },
     {
       title: 'Real-time sync from every social lead ad platform',
@@ -221,6 +236,7 @@ export const targetAudience = {
     'CRM admins',
     'Growth & demand gen teams',
     'Sales ops teams who want clean pipeline data',
+    'Social and community teams buried in comments and DMs',
   ],
   askYourself: [
     'Do you trust your CRM data… or just tolerate it?',
@@ -228,6 +244,7 @@ export const targetAudience = {
     'Are you tired of “almost working” integrations?',
     'Do you need to collaborate with agencies without exposing PII?',
     'Are you managing multiple clients, brands, or projects under one roof?',
+    'Are comments and DMs slipping through the cracks while your team’s attention is elsewhere?',
   ],
   punchline:
     'If you said “yes” more than once… it’s probably time to stop patching and start controlling.',
@@ -239,7 +256,7 @@ export const testimonials = {
     '“It shouldn’t be this hard to sync leads from a form to my CRM.”',
     '“That’s exactly our problem — syncs fail and we only find out when it’s too late.”',
     '“We needed one place to manage integrations across clients without exposing PII.”',
-    '“Finally something that lets us clean and map data before it hits the CRM.”',
+    '“Auto-replying to Instagram comments and turning them into leads — I didn’t think that existed outside enterprise tools.”',
   ],
   outro: [
     'You’re not alone. Modern teams still struggle to get their data where it needs to be, in real time, without breaking something.',
@@ -251,7 +268,7 @@ export const futureIntegrations = {
   heading: 'Future Integrations',
   body: [
     'We’re continuously expanding the ecosystem.',
-    'Upcoming integrations will include additional CRMs, marketing tools, and messaging platforms.',
+    'Upcoming integrations will include additional CRMs, marketing tools, and channels beyond WhatsApp, Instagram, and Messenger.',
     'Users can also request integrations.',
   ],
 };
@@ -262,7 +279,7 @@ export const finalCta = {
     "Most teams running social lead ad campaigns are stitching together a lead sync tool, messaging bots, a customer data platform, and an agency workspace tool. sysConnector is all four.",
   body: "If you’re juggling several systems, campaigns, or client stacks — sysConnector gives you one place to manage everything cleanly.",
   bullets: [
-    "Messaging bots that turn conversations into CRM leads — WhatsApp first, more coming",
+    "Auto-reply bots that turn comments and DMs into CRM leads — live on WhatsApp, Instagram, and Messenger",
     "Unified Customer Profiles across every ad source",
     "Project workspaces that keep client data isolated",
     "PII masking so agencies never see what they shouldn’t",
