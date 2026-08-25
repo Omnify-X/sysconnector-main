@@ -198,11 +198,6 @@ export const features = {
       body: 'Organise your connections, leads, and data into separate workspaces — by client, brand, campaign, or team. Everything stays isolated, nothing bleeds across projects.',
       note: 'Built for agencies, enterprise teams, and anyone managing more than one integration at a time.',
     },
-    {
-      title: 'Full sync visibility and instant alerts',
-      body: 'See every sync, every failure, and every field mismatch in real time. Know the moment something breaks — before your client does.',
-      note: 'No more finding out days later that leads went missing.',
-    },
   ],
 };
 

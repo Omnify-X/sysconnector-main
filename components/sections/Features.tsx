@@ -9,7 +9,6 @@ import {
   Eye,
   Shield,
   Layers,
-  Activity,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -20,7 +19,6 @@ const icons: LucideIcon[] = [
   Eye,
   Shield,
   Layers,
-  Activity,
 ];
 
 export function Features() {
