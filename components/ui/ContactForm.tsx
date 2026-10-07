@@ -55,7 +55,21 @@ const Field = forwardRef<HTMLInputElement | HTMLTextAreaElement, FieldProps>(
   },
 );
 
-export function ContactForm() {
+interface ContactFormProps {
+  /** Tags the enquiry so the inbox can tell campaign leads apart. */
+  source?: string;
+  messageLabel?: string;
+  submitLabel?: string;
+  /** Adds a WhatsApp / phone field. */
+  withPhone?: boolean;
+}
+
+export function ContactForm({
+  source,
+  messageLabel = 'Message',
+  submitLabel = 'Send message',
+  withPhone = false,
+}: ContactFormProps = {}) {
   const [state, setState] = useState<FormState>('idle');
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [cfToken, setCfToken] = useState<string | null>(null);
@@ -71,6 +85,8 @@ export function ContactForm() {
       name: String(data.get('name') || '').trim(),
       email: String(data.get('email') || '').trim(),
       company: String(data.get('company') || '').trim(),
+      phone: String(data.get('phone') || '').trim(),
+      source,
       message: String(data.get('message') || '').trim(),
       website: String(data.get('website') || '').trim(), // honeypot
       cf_token: cfToken,
@@ -184,8 +200,16 @@ export function ContactForm() {
         name="company"
         autoComplete="organization"
       />
+      {withPhone && (
+        <Field
+          label="WhatsApp number"
+          name="phone"
+          type="tel"
+          autoComplete="tel"
+        />
+      )}
       <Field
-        label="Message"
+        label={messageLabel}
         name="message"
         required
         rows={5}
@@ -236,7 +260,7 @@ export function ContactForm() {
           (!!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !cfToken)
         }
       >
-        {state === 'submitting' ? 'Sending…' : 'Send message'}
+        {state === 'submitting' ? 'Sending…' : submitLabel}
       </Button>
 
       <p className="text-xs text-fg-subtle">

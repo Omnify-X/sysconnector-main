@@ -34,6 +34,13 @@ export function Header() {
             Connectors
           </Link>
 
+          <Link
+            href="/pricing"
+            className="hidden h-9 items-center rounded-lg px-4 text-sm font-medium text-fg-muted transition hover:bg-bg-sunken hover:text-fg sm:inline-flex"
+          >
+            Pricing
+          </Link>
+
           {/* Resources dropdown */}
           <div className="group relative hidden sm:block">
             <button className="flex h-9 items-center gap-1 rounded-lg px-4 text-sm font-medium text-fg-muted transition hover:bg-bg-sunken hover:text-fg">

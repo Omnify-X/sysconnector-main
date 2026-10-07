@@ -75,6 +75,8 @@ export async function POST(request: Request) {
   const name = sanitize(raw.name, 120);
   const email = sanitize(raw.email, 254);
   const company = sanitize(raw.company, 120);
+  const phone = sanitize(raw.phone, 40);
+  const source = sanitize(raw.source, 60);
   const message = sanitize(raw.message, 5000);
 
   // Honeypot: bots tend to fill every field. A hidden field named "website"
@@ -111,12 +113,12 @@ export async function POST(request: Request) {
     // can be tested locally without live Brevo credentials.
     console.warn(
       '[contact] BREVO_API_KEY or CONTACT_FROM_EMAIL not set. Submission received:',
-      { name, email, company, message },
+      { name, email, company, phone, source, message },
     );
     return NextResponse.json({ ok: true, dev: true });
   }
 
-  const subject = `New enquiry from ${name}${company ? ' (' + company + ')' : ''}`;
+  const subject = `${source ? '[' + source + '] ' : ''}New enquiry from ${name}${company ? ' (' + company + ')' : ''}`;
 
   // Plain-text fallback for email clients that don't render HTML
   const textBody = [
@@ -125,6 +127,8 @@ export async function POST(request: Request) {
     `Name:    ${name}`,
     `Email:   ${email}`,
     company ? `Company: ${company}` : null,
+    phone ? `Phone:   ${phone}` : null,
+    source ? `Source:  ${source}` : null,
     '',
     'Message:',
     message,
@@ -155,6 +159,22 @@ export async function POST(request: Request) {
         ? `<tr>
       <td style="padding: 8px 0; color: #737373; font-size: 13px; vertical-align: top;">Company</td>
       <td style="padding: 8px 0; font-size: 14px;">${escapeHtml(company)}</td>
+    </tr>`
+        : ''
+    }
+    ${
+      phone
+        ? `<tr>
+      <td style="padding: 8px 0; color: #737373; font-size: 13px; vertical-align: top;">Phone</td>
+      <td style="padding: 8px 0; font-size: 14px;">${escapeHtml(phone)}</td>
+    </tr>`
+        : ''
+    }
+    ${
+      source
+        ? `<tr>
+      <td style="padding: 8px 0; color: #737373; font-size: 13px; vertical-align: top;">Source</td>
+      <td style="padding: 8px 0; font-size: 14px;">${escapeHtml(source)}</td>
     </tr>`
         : ''
     }
