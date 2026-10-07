@@ -2,9 +2,8 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/components/sections/Hero';
 import { FlowDiagram } from '@/components/sections/FlowDiagram';
-import { ProblemIntro } from '@/components/sections/ProblemIntro';
 import { PainPoints } from '@/components/sections/PainPoints';
-import { BreakingLeadFlow } from '@/components/sections/BreakingLeadFlow';
+import { WhyLayer } from '@/components/sections/WhyLayer';
 import { Solution } from '@/components/sections/Solution';
 import { Features } from '@/components/sections/Features';
 import { CustomerProfile } from '@/components/sections/CustomerProfile';
@@ -20,10 +19,9 @@ export default function HomePage() {
       <main>
         <Hero />
         <FlowDiagram />
-        <ProblemIntro />
         <PainPoints />
-        <BreakingLeadFlow />
         <Solution />
+        <WhyLayer />
         <Features />
         <CustomerProfile />
         <TargetAudience />

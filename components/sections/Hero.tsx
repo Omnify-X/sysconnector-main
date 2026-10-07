@@ -5,6 +5,7 @@ import { Eyebrow } from '@/components/ui/Eyebrow';
 import { HeroMockup } from '@/components/ui/HeroMockup';
 import { hero } from '@/lib/content';
 import { Check } from 'lucide-react';
+import Link from 'next/link';
 
 export function Hero() {
   return (
@@ -17,7 +18,7 @@ export function Hero() {
       <Container className="section-y relative">
         <div className="mx-auto max-w-4xl text-center">
           <Reveal>
-            <Eyebrow>Early Access · Social Lead & Messaging Platform</Eyebrow>
+            <Eyebrow>{hero.eyebrow}</Eyebrow>
           </Reveal>
 
           <Reveal delay={80}>
@@ -56,7 +57,10 @@ export function Hero() {
 
           <Reveal delay={480}>
             <p className="mt-4 text-xs text-fg-subtle">
-              No credit card required · 2-minute setup
+              {hero.note} ·{' '}
+              <Link href="/pricing" className="link-underline text-fg-muted">
+                See pricing
+              </Link>
             </p>
           </Reveal>
         </div>

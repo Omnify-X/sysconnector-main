@@ -23,7 +23,7 @@ export function FinalCTA() {
             <Reveal>
               <p className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 font-mono text-xs uppercase tracking-[0.14em] text-accent">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
-                Early access
+                {finalCta.badge}
               </p>
             </Reveal>
 
@@ -74,12 +74,6 @@ export function FinalCTA() {
                   No credit card required
                 </p>
               </div>
-            </Reveal>
-
-            <Reveal delay={460}>
-              <p className="mt-10 border-t border-border pt-8 text-sm text-fg-muted">
-                {finalCta.closingItalic}
-              </p>
             </Reveal>
           </div>
         </div>

@@ -42,6 +42,13 @@ export function MobileNav() {
           >
             Connectors
           </Link>
+          <Link
+            href="/pricing"
+            onClick={close}
+            className="flex h-10 items-center rounded-lg px-4 text-sm font-medium text-fg-muted transition hover:bg-bg-sunken hover:text-fg"
+          >
+            Pricing
+          </Link>
 
           <div className="mx-1 my-1 border-t border-border" />
 
