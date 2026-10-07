@@ -7,11 +7,11 @@ export const hero = {
   headline:
     'Every DM answered instantly. Every ad lead in your CRM in real time.',
   subhead:
-    'Bots on WhatsApp, Instagram, and Messenger reply, qualify, and capture the lead. Meta, TikTok, and LinkedIn ad leads sync the moment they’re submitted. Both land in HubSpot, Salesforce, Brevo, or your CRM as one customer profile.',
+    'Bots on WhatsApp, Instagram, and Messenger reply, qualify, and capture the lead. Meta, TikTok, and LinkedIn ad leads sync the moment they’re submitted. Both land in HubSpot, Salesforce, Brevo, or your CRM.',
   bullets: [
     'Bots that reply in your brand’s voice, 24/7',
     'Ad leads synced as they’re captured, with alerts if a sync fails',
-    'One profile per person, wherever they came from',
+    'Leads with the same email or phone merged into one profile',
   ],
   cta: 'Start free',
   note: 'Free forever for lead sync up to 100 leads a month · Bots from $39 · Customer Profiles from $99',
@@ -64,7 +64,7 @@ export const painPoints = {
 export const solution = {
   heading: 'From first message or ad click to your CRM — in real time.',
   paragraphs: [
-    'Messages get an instant reply from your bot. Form leads land in your CRM the moment they’re submitted, so your CRM’s own assignment rules and notifications kick in straight away. Every lead becomes one clean customer profile. No developers, no duct tape.',
+    'Messages get an instant reply from your bot. Form leads land in your CRM the moment they’re submitted, so your CRM’s own assignment rules and notifications kick in straight away. Leads with the same email or phone become one customer profile. No developers, no duct tape.',
     'Bots are live now on WhatsApp, Instagram, and Messenger. They reply, qualify, and turn chats into structured CRM leads. When a customer asks for a person, the bot hands over and emails your team.',
   ],
 };
@@ -76,7 +76,7 @@ export const whyLayer = {
   items: [
     {
       title: 'One customer across every platform',
-      body: 'Meta only sees Meta. TikTok only sees TikTok. Ad platforms have no reason to merge each other’s data — sysConnector does. When the same email or phone number turns up in a Meta form, a TikTok form, and a WhatsApp chat, that’s one customer, not three leads.',
+      body: 'Meta only sees Meta. TikTok only sees TikTok. Ad platforms have no reason to merge each other’s data — sysConnector does. When the same email turns up in a Meta form, a TikTok form, and a bot conversation, that’s one customer, not three leads.',
     },
     {
       title: 'Control who sees what',
@@ -333,7 +333,7 @@ export const foundingPartners = {
     items: [
       { title: 'Apply', body: 'Tell us what you run lead ads or WhatsApp enquiries for. It takes 2 minutes.' },
       { title: 'Setup call', body: 'We book a call to connect your channels, your CRM, and your first bot.' },
-      { title: 'Go live', body: 'Your bot answers enquiries and your leads land in your CRM as one customer profile.' },
+      { title: 'Go live', body: 'Your bot answers enquiries, your leads land in your CRM, and repeat leads merge into one customer profile.' },
     ],
   },
   form: {
