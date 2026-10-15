@@ -344,3 +344,61 @@ export const foundingPartners = {
   smallPrint:
     'Limited to 20 teams, for new sysConnector accounts. After 3 months you can stay on Professional at US$99/month or move to any plan, including Free.',
 };
+
+/** Campaign page for brands and larger companies (WNMY executive flyer). */
+export const pilot = {
+  eyebrow: 'Pilot programme · Malaysia',
+  headline: 'How long do your ad leads wait for a reply?',
+  subhead:
+    'Run sysConnector on one live campaign for 30 days. We set it up with your team — bots answering on WhatsApp, Instagram, and Messenger, and every lead in your CRM in real time.',
+  cta: 'Book a 15-minute briefing',
+  get: {
+    heading: 'What the pilot includes',
+    items: [
+      {
+        title: 'Set up with your team',
+        body: 'We connect your ad accounts, messaging channels, and CRM with you, and configure your first bot in your brand’s voice.',
+      },
+      {
+        title: 'The full platform',
+        body: 'AI bots, unified Customer Profiles, and PII masking for agencies and partners, for the length of the pilot.',
+      },
+      {
+        title: 'Success measures agreed upfront',
+        body: 'We agree what good looks like before we start — first-reply time, leads synced — and review the results with you at the end.',
+      },
+    ],
+  },
+  ask: {
+    heading: 'After 30 days',
+    items: [
+      'Continue on a plan that fits your lead volume and team',
+      'Or stop, with no commitment',
+      'Either way, you get a results review with our team',
+    ],
+  },
+  forWho: {
+    heading: 'Built for brands that run lead ads at scale',
+    items: [
+      'Marketing teams working with one or more agencies',
+      'Sales teams that need leads in the CRM, not in inboxes',
+      'Businesses selling through WhatsApp',
+      'Teams that must keep personal data away from partners',
+    ],
+  },
+  steps: {
+    heading: 'How it works',
+    items: [
+      { title: 'Briefing', body: 'A 15-minute call about your campaigns, channels, and CRM.' },
+      { title: 'Setup', body: 'We connect everything with your team and launch your bot.' },
+      { title: '30-day pilot', body: 'Run it on a live campaign, then review the results together.' },
+    ],
+  },
+  form: {
+    heading: 'Book your briefing',
+    messageLabel: 'Which campaign, channels, and CRM would you like to pilot?',
+    submitLabel: 'Book a briefing',
+  },
+  smallPrint:
+    'Pilot places are limited so our team can run each one properly. Open to companies in Malaysia.',
+};
