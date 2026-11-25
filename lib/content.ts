@@ -7,7 +7,7 @@ export const hero = {
   headline:
     'Every DM answered instantly. Every ad lead in your CRM in real time.',
   subhead:
-    'Bots on WhatsApp, Instagram, and Messenger reply, qualify, and capture the lead. Meta, TikTok, and LinkedIn ad leads sync the moment they’re submitted. Both land in HubSpot, Salesforce, Brevo, or your CRM.',
+    'Bots on WhatsApp, Instagram, and Messenger reply, qualify, and capture the lead — and turn post comments into private conversations. Meta, TikTok, and LinkedIn ad leads sync the moment they’re submitted. Both land in HubSpot, Salesforce, Brevo, or your CRM.',
   bullets: [
     'Bots that reply in your brand’s voice, 24/7',
     'Ad leads synced as they’re captured, with alerts if a sync fails',
@@ -69,6 +69,63 @@ export const solution = {
   ],
 };
 
+/** "See it in action" product tour. Every claim here is checked against sysconnector-be. */
+export const productTour = {
+  eyebrow: 'See it in action',
+  heading: 'Reply. Sync. Unify.',
+  intro: 'Four parts of one platform — each one set up in minutes, no developer needed.',
+  tabs: [
+    {
+      id: 'bots',
+      label: 'Messaging bots',
+      title: 'Reply in seconds, in your brand’s voice',
+      body: 'AI bots answer WhatsApp, Instagram, and Messenger enquiries 24/7, qualify the lead, and send it to your CRM.',
+      bullets: [
+        'A persona and keyword rules for questions, CTAs, promo codes, and T&Cs',
+        'Hands over to your team by email when a customer asks for a person',
+        'Connect WhatsApp, Instagram, and Messenger in one click — sysConnector is a Meta Tech Provider',
+      ],
+      plan: 'From Starter',
+    },
+    {
+      id: 'comment-to-dm',
+      label: 'Comment-to-DM',
+      title: 'Turn “price?” comments into conversations',
+      body: 'When someone comments on your Facebook or Instagram post, your bot sends them a private DM and starts qualifying the lead.',
+      bullets: [
+        'Trigger on every comment, or only on keywords you choose',
+        'Listen on all posts, or only specific ones',
+        'Optionally post a short public reply under the comment',
+      ],
+      plan: 'From Starter',
+    },
+    {
+      id: 'integrations',
+      label: 'Integrations',
+      title: 'Every ad lead in your CRM, in real time',
+      body: 'Connect Meta, TikTok, and LinkedIn lead ads to HubSpot, Salesforce, Brevo, Adobe Campaign, and more in five guided steps.',
+      bullets: [
+        'Leads arrive the moment they’re submitted',
+        'AI suggests your field mapping — no developer needed',
+        'An email alert the moment a sync fails, with the error logged against the lead',
+      ],
+      plan: 'Included in the Free plan',
+    },
+    {
+      id: 'profiles',
+      label: 'Customer Profiles',
+      title: 'One profile per customer, across every channel',
+      body: 'Leads with the same email or phone merge into one profile, with their sources, activity, and sync status in one place.',
+      bullets: [
+        'Filter by score, consent, identity, or failed syncs',
+        'AI summaries flag missing data and quality issues',
+        'Personal data masked for agencies and partners on Scale',
+      ],
+      plan: 'From Professional',
+    },
+  ],
+};
+
 export const whyLayer = {
   heading: 'Why a layer, not another integration',
   subheading:
@@ -86,23 +143,8 @@ export const whyLayer = {
 };
 
 export const features = {
-  heading: 'What you get',
+  heading: 'Built for teams and agencies',
   cards: [
-    {
-      title: 'Give your bot a persona — and rules for what it does next',
-      body: 'Define an AI persona so every reply sounds like your brand, then set response rules per keyword: the action to take and the intent behind it — capture a lead, hand over a CTA, send a promo code, or surface your T&Cs. No developer, no flowchart tool.',
-      note: 'Your bot handles the first conversation and captures the lead; your team follows up from the CRM.',
-    },
-    {
-      title: 'Real-time sync from every social lead ad platform',
-      body: 'Capture and route leads from Meta, LinkedIn, and TikTok as they come in. AI suggests how your fields map to your CRM, and you can combine fields, convert types, and filter out what you don’t need — so your CRM stays consistent from day one.',
-      note: 'You get an email the moment a sync fails, with the error logged against the lead.',
-    },
-    {
-      title: 'Unified Customer Profiles across all sources',
-      body: 'Every lead from every platform lands in one structured profile. See who\'s converting, from where, across all your campaigns — without building a CDP from scratch.',
-      note: 'Your sales team sees where each lead came from before they make the first call.',
-    },
     {
       title: 'Project workspaces for every team',
       body: 'Organise your connections, leads, and data into separate workspaces — by client, brand, campaign, or team. Everything stays isolated, nothing bleeds across projects.',
@@ -112,24 +154,6 @@ export const features = {
       title: 'Security and data control',
       body: 'Data is encrypted in transit, and connection credentials are encrypted at rest. Role-based permissions mean team members only access what they need. PII masking ensures external users and agencies never see what they shouldn\'t. Sync logs keep a history of every lead.',
       note: 'Built for teams that handle sensitive customer data across multiple clients.',
-    },
-  ],
-};
-
-export const customerProfile = {
-  heading: 'Every lead becomes a unified Customer Profile',
-  quote:
-    'The kind of single customer view across all your ad sources that previously lived only inside enterprise data platforms — now available without a developer or a six-figure contract.',
-  caption:
-    'Every lead from every source lands in one structured profile — clean, consistent, and ready for attribution, segmentation, and follow-up.',
-  aiFeatures: [
-    {
-      label: 'AI field mapping',
-      body: 'sysConnector suggests how your source fields map to your CRM fields — so your data lands clean without manual matching or a developer. Only field names go to the AI, never your customer data.',
-    },
-    {
-      label: 'AI profile insights',
-      body: 'Open any profile and get a plain-English summary — engagement history, data completeness gaps, and quality flags. Emails, phone numbers, addresses, and surnames are masked before anything reaches the AI.',
     },
   ],
 };
@@ -173,7 +197,6 @@ export const futureIntegrations = {
   heading: 'Future Integrations',
   body: [
     'We’re continuously expanding the ecosystem.',
-    'Coming next: Comment-to-DM — when someone comments “price?” on your post, your bot opens a private conversation and captures the lead.',
     'Upcoming integrations will include additional CRMs, marketing tools, and channels beyond WhatsApp, Instagram, and Messenger.',
     'Users can also request integrations.',
   ],
@@ -187,6 +210,7 @@ export const finalCta = {
   body: 'Start with the source that’s costing you the most leads today, and add the rest when you’re ready.',
   bullets: [
     'Auto-reply bots that turn conversations into CRM leads — from Starter',
+    'Comment-to-DM that turns post comments into qualified leads — from Starter',
     'Unified Customer Profiles across every source — from Professional',
     'Project workspaces that keep client data isolated',
     'PII masking so agencies never see what they shouldn’t — on Scale',
@@ -272,6 +296,7 @@ export const pricing = {
     { label: 'Two-way sync', values: [false, false, true, true] },
     { label: 'AI messaging bots', values: [false, '1 bot', '3 channels', 'Unlimited channels'] },
     { label: 'AI messages per month', values: ['—', '250', '1,000', '10,000'] },
+    { label: 'Comment-to-DM (Instagram & Facebook)', values: [false, true, true, true] },
     { label: 'Unified Customer Profiles', values: [false, false, true, true] },
     { label: 'Outbound webhooks', values: [false, false, true, true] },
     { label: 'Advanced reporting', values: [false, false, true, true] },
