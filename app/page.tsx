@@ -6,7 +6,7 @@ import { PainPoints } from '@/components/sections/PainPoints';
 import { WhyLayer } from '@/components/sections/WhyLayer';
 import { Solution } from '@/components/sections/Solution';
 import { Features } from '@/components/sections/Features';
-import { CustomerProfile } from '@/components/sections/CustomerProfile';
+import { ProductTour } from '@/components/sections/ProductTour';
 import { TargetAudience } from '@/components/sections/TargetAudience';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { FutureIntegrations } from '@/components/sections/FutureIntegrations';
@@ -21,9 +21,9 @@ export default function HomePage() {
         <FlowDiagram />
         <PainPoints />
         <Solution />
+        <ProductTour />
         <WhyLayer />
         <Features />
-        <CustomerProfile />
         <TargetAudience />
         <Testimonials />
         <FutureIntegrations />

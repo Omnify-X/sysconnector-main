@@ -165,8 +165,8 @@ export function CustomerProfileMockup() {
           <ul className="flex flex-wrap gap-1.5">
             {[
               { label: 'Form submit', time: '2m' },
-              { label: 'Synced to Brevo', time: '2m' },
-              { label: 'Email opened', time: '—' },
+              { label: 'Bot conversation', time: '1m' },
+              { label: 'Synced to HubSpot', time: '1m' },
             ].map((a) => (
               <li
                 key={a.label}

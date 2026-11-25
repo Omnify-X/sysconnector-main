@@ -1,7 +1,8 @@
 /**
  * Hero mockup — minimalist recreation of the actual Customer Profiles
- * dashboard screen. Matches the real product's sidebar, filters, table
- * structure, score badges, and status states.
+ * screen in app.sysconnector.com (layout as of Nov 2026): workspace
+ * switcher, sidebar nav, filter card with score buttons and toggles, and
+ * the customers table. Demo data only — no real customers.
  *
  * Purely decorative (aria-hidden). Adapts to dark mode via CSS tokens.
  */
@@ -9,30 +10,31 @@
 import Image from 'next/image';
 import {
   LayoutGrid,
-  FolderKanban,
+  Folder,
   Database,
-  Zap,
+  MessageSquare,
   Users,
   BarChart3,
   Settings,
   CircleHelp,
+  Building2,
   Search,
   ChevronDown,
+  Mail,
+  Phone,
   Eye,
   Trash2,
   CheckCircle2,
   CircleAlert,
   Clock,
-  AlertTriangle,
 } from 'lucide-react';
 
-type Source = 'WhatsApp Bot' | 'Google Sheets' | 'Facebook Lead Forms' | 'SFTP Source';
-type Score = 'High' | 'Medium' | 'Low' | 'Sync Failed';
-type Status = 'synced' | 'not_synced_yet' | 'error_syncing_lead';
+type Source = 'WhatsApp Bot' | 'Facebook Lead Forms' | 'Google Sheets' | 'SFTP Source';
+type Score = 'High' | 'Medium' | 'Low';
+type Status = 'synced' | 'not_synced_yet' | 'sync_failed';
 
 interface Customer {
   name: string;
-  id: string;
   email: string;
   phone: string;
   source: Source;
@@ -44,59 +46,54 @@ interface Customer {
 
 const customers: Customer[] = [
   {
-    name: 'Sarah Chen',
-    id: 'ctc_8f2a1b',
-    email: 's.chen@example.com',
-    phone: '+1 555 ••• 4821',
+    name: 'Aisyah Rahman',
+    email: 'aisyah.r@example.com',
+    phone: '+60 12 ••• 4821',
     source: 'WhatsApp Bot',
-    project: 'Spring Campaign',
-    lastSeen: '3 days ago',
-    score: 'Medium',
-    status: 'synced',
-  },
-  {
-    name: 'Marcus Patel',
-    id: 'ctc_3d9e02',
-    email: 'm.patel@example.com',
-    phone: '+44 20 •••• 1730',
-    source: 'Google Sheets',
-    project: 'Enterprise Leads',
-    lastSeen: '6 days ago',
+    project: 'Open Day 2026',
+    lastSeen: 'Nov 24, 2026',
     score: 'High',
     status: 'synced',
   },
   {
-    name: 'Elena Rossi',
-    id: 'ctc_5b74c1',
-    email: 'e.rossi@example.com',
-    phone: '+39 02 •••• 9042',
+    name: 'Daniel Tan',
+    email: 'daniel.tan@example.com',
+    phone: '+60 17 ••• 1730',
     source: 'Facebook Lead Forms',
-    project: 'Spring Campaign',
-    lastSeen: '3 days ago',
+    project: 'Property Launch',
+    lastSeen: 'Nov 24, 2026',
+    score: 'Medium',
+    status: 'synced',
+  },
+  {
+    name: 'Priya Nair',
+    email: 'priya.nair@example.com',
+    phone: '+65 9 ••• 9042',
+    source: 'Facebook Lead Forms',
+    project: 'Property Launch',
+    lastSeen: 'Nov 23, 2026',
     score: 'Medium',
     status: 'not_synced_yet',
   },
   {
-    name: 'Jordan Kim',
-    id: 'ctc_a1f22e',
-    email: 'j.kim@example.com',
-    phone: '+82 2 •••• 3315',
-    source: 'Facebook Lead Forms',
-    project: 'Retargeting Q2',
-    lastSeen: '3 days ago',
+    name: 'Jason Lim',
+    email: 'jason.lim@example.com',
+    phone: '+60 11 ••• 3315',
+    source: 'Google Sheets',
+    project: 'Test Drive Q4',
+    lastSeen: 'Nov 22, 2026',
     score: 'Low',
     status: 'synced',
   },
   {
-    name: 'Alex Dubois',
-    id: 'ctc_7e4091',
-    email: 'a.dubois@example.com',
-    phone: '+33 1 •••• 6208',
+    name: 'Mei Ling Wong',
+    email: 'meiling.w@example.com',
+    phone: '+60 16 ••• 6208',
     source: 'SFTP Source',
     project: 'Partner Imports',
-    lastSeen: '2 days ago',
-    score: 'Sync Failed',
-    status: 'error_syncing_lead',
+    lastSeen: 'Nov 21, 2026',
+    score: 'Medium',
+    status: 'sync_failed',
   },
 ];
 
@@ -118,7 +115,7 @@ export function HeroMockup() {
         </div>
 
         {/* App body: sidebar + content */}
-        <div className="grid grid-cols-[180px_1fr]">
+        <div className="grid grid-cols-[190px_1fr]">
           <Sidebar />
           <Content />
         </div>
@@ -130,9 +127,9 @@ export function HeroMockup() {
 function Sidebar() {
   const nav = [
     { label: 'Dashboard', icon: LayoutGrid },
-    { label: 'All Projects', icon: FolderKanban },
+    { label: 'All Projects', icon: Folder },
     { label: 'Data Sources', icon: Database },
-    { label: 'Automations', icon: Zap },
+    { label: 'Messaging Bots', icon: MessageSquare },
     { label: 'Customer Profiles', icon: Users, active: true },
     { label: 'Reports', icon: BarChart3 },
     { label: 'Settings', icon: Settings },
@@ -140,9 +137,9 @@ function Sidebar() {
   ];
 
   return (
-    <aside className="flex flex-col border-r border-border bg-bg-sunken/60 py-3">
+    <aside className="flex flex-col border-r border-border bg-bg py-3">
       {/* Logo */}
-      <div className="flex items-center gap-2 px-4 pb-4">
+      <div className="flex items-center gap-2 border-b border-border px-4 pb-3">
         <Image
           src="/sysconnector-logo.png"
           alt=""
@@ -151,12 +148,22 @@ function Sidebar() {
           className="h-5 w-5"
         />
         <span className="text-[0.75rem] font-semibold tracking-tight text-fg">
-          <span className="text-fg-muted">sys</span>Connector
+          <span className="font-normal text-fg-muted">sys</span>Connector
         </span>
       </div>
 
+      {/* Workspace switcher */}
+      <p className="px-4 pt-3 font-mono text-[0.5rem] uppercase tracking-[0.14em] text-fg-subtle">
+        Workspace
+      </p>
+      <div className="mx-2 mt-1.5 flex items-center gap-1.5 rounded-md bg-bg-sunken px-2 py-1.5">
+        <Building2 size={11} className="text-fg-subtle" strokeWidth={1.75} />
+        <span className="truncate text-[0.68rem] font-medium text-fg">Acme Marketing</span>
+        <span className="ml-auto text-[0.55rem] text-fg-subtle">Owner</span>
+      </div>
+
       {/* Nav */}
-      <nav className="flex flex-1 flex-col gap-0.5 px-2">
+      <nav className="mt-3 flex flex-1 flex-col gap-0.5 px-2">
         {nav.map((item) => {
           const Icon = item.icon;
           return (
@@ -165,7 +172,7 @@ function Sidebar() {
               className={[
                 'flex items-center gap-2 rounded-md px-2 py-1.5 text-[0.7rem]',
                 item.active
-                  ? 'bg-accent/10 text-accent font-medium'
+                  ? 'bg-accent/10 font-medium text-accent'
                   : 'text-fg-muted',
               ].join(' ')}
             >
@@ -176,12 +183,12 @@ function Sidebar() {
         })}
       </nav>
 
-      {/* User chip */}
-      <div className="mt-2 mx-2 flex items-center gap-2 rounded-lg border border-border bg-bg px-2 py-1.5">
-        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-fg text-[0.55rem] font-semibold text-bg">
+      {/* User */}
+      <div className="mx-2 mt-2 flex items-center justify-between border-t border-border px-2 pt-2.5">
+        <span className="text-[0.68rem] text-fg-muted">Alex</span>
+        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-accent/15 text-[0.55rem] font-semibold text-accent">
           A
-        </div>
-        <span className="text-[0.7rem] text-fg">Alex Morgan</span>
+        </span>
       </div>
     </aside>
   );
@@ -189,91 +196,95 @@ function Sidebar() {
 
 function Content() {
   return (
-    <div className="flex min-w-0 flex-col">
+    <div className="flex min-w-0 flex-col gap-3 bg-bg-sunken/40 px-5 py-4">
       {/* Page title */}
-      <div className="border-b border-border px-5 py-4">
+      <div>
         <h3 className="text-[0.95rem] font-semibold text-fg">Customer Profiles</h3>
         <p className="text-[0.65rem] text-fg-muted">
           Manage and view customer profiles across all your projects
         </p>
       </div>
 
-      {/* Filter bar */}
-      <FilterBar />
-
-      {/* Customers list */}
+      <FilterCard />
       <CustomerTable />
     </div>
   );
 }
 
-function FilterBar() {
+function FilterCard() {
   return (
-    <div className="border-b border-border bg-bg px-5 py-3">
+    <div className="rounded-lg border border-border bg-bg-elevated p-3">
       {/* Search */}
-      <div className="flex items-center gap-2 rounded-md border border-border bg-bg-sunken px-2.5 py-1.5">
+      <div className="flex items-center gap-2 rounded-md border border-border bg-bg px-2.5 py-1.5">
         <Search size={11} className="text-fg-subtle" />
         <span className="text-[0.65rem] text-fg-subtle">Search keywords…</span>
       </div>
 
-      {/* Filters row */}
-      <div className="mt-2 flex flex-wrap items-center gap-1.5">
-        <FilterPill label="All Projects" />
-        <FilterPill label="Any Source" />
-        <FilterPill label="All Time" />
-        <div className="flex items-center gap-1 font-mono text-[0.55rem] uppercase tracking-[0.1em] text-fg-subtle">
-          <span>Score</span>
-        </div>
-        <ScoreChip tone="high">High</ScoreChip>
-        <ScoreChip tone="medium">Medium</ScoreChip>
-        <ScoreChip tone="low">Low</ScoreChip>
+      {/* Dropdowns */}
+      <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[0.62rem] text-fg">
+        <span className="inline-flex items-center gap-1.5">
+          All Projects <Dropdown label="All Projects" />
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          Any Source <Dropdown label="Any Source" />
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          Date: <Dropdown label="All Time" />
+        </span>
+      </div>
+
+      {/* Score + toggles */}
+      <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[0.62rem] text-fg">
+        <span className="inline-flex items-center gap-1">
+          Profile Score
+          {(['High', 'Medium', 'Low'] as const).map((s) => (
+            <span
+              key={s}
+              className="rounded-md border border-border bg-bg px-1.5 py-0.5 text-[0.58rem]"
+            >
+              {s}
+            </span>
+          ))}
+        </span>
+        <Toggle label="Has Identity" />
+        <Toggle label="Has Consent" />
+        <Toggle label="Sync Failed" />
       </div>
     </div>
   );
 }
 
-function FilterPill({ label }: { label: string }) {
+function Dropdown({ label }: { label: string }) {
   return (
-    <div className="inline-flex items-center gap-1 rounded-md border border-border bg-bg-sunken px-2 py-0.5 text-[0.65rem] text-fg-muted">
+    <span className="inline-flex items-center gap-1.5 rounded-md border border-border bg-bg px-2 py-0.5 text-[0.62rem] text-fg">
       {label}
       <ChevronDown size={10} className="text-fg-subtle" strokeWidth={1.75} />
-    </div>
+    </span>
   );
 }
 
-function ScoreChip({
-  tone,
-  children,
-}: {
-  tone: 'high' | 'medium' | 'low';
-  children: React.ReactNode;
-}) {
-  const styles = {
-    high: 'border-blue-500/30 bg-blue-500/10 text-blue-700 dark:text-blue-300',
-    medium: 'border-green-500/30 bg-green-500/10 text-green-700 dark:text-green-300',
-    low: 'border-red-500/30 bg-red-500/10 text-red-700 dark:text-red-300',
-  } as const;
+function Toggle({ label }: { label: string }) {
   return (
-    <span
-      className={`inline-flex items-center rounded-md border px-1.5 py-0.5 text-[0.6rem] font-medium ${styles[tone]}`}
-    >
-      {children}
+    <span className="inline-flex items-center gap-1.5">
+      <span className="relative inline-block h-3 w-5 rounded-full bg-border">
+        <span className="absolute left-0.5 top-0.5 h-2 w-2 rounded-full bg-bg-elevated shadow-sm" />
+      </span>
+      {label}
     </span>
   );
 }
 
 function CustomerTable() {
+  const cols = 'grid grid-cols-[1fr_1.35fr_1.05fr_0.75fr_0.5fr_0.85fr_0.35fr] items-center gap-2';
+
   return (
-    <div className="flex-1">
-      {/* Section title */}
-      <div className="flex items-center justify-between px-5 pt-3 pb-2">
-        <p className="text-[0.75rem] font-semibold text-fg">
-          Customers <span className="font-normal text-fg-subtle">(9)</span>
-        </p>
-      </div>
+    <div className="rounded-lg border border-border bg-bg-elevated">
+      <p className="px-4 pb-2 pt-3 text-[0.8rem] font-semibold text-fg">
+        Customers <span className="font-normal text-fg-subtle">(5)</span>
+      </p>
 
       {/* Column headers */}
-      <div className="grid grid-cols-[1.1fr_1.3fr_1fr_0.7fr_0.6fr_0.8fr_0.4fr] items-center gap-2 border-b border-border bg-bg-sunken/50 px-5 py-2 font-mono text-[0.55rem] uppercase tracking-[0.14em] text-fg-subtle">
+      <div className={`${cols} border-b border-border px-4 py-1.5 text-[0.58rem] text-fg-muted`}>
         <span>Name</span>
         <span>Email / Phone</span>
         <span>Source / Project</span>
@@ -287,115 +298,72 @@ function CustomerTable() {
       <ul>
         {customers.map((c, i) => (
           <li
-            key={`${c.email}-${i}`}
+            key={c.email}
             className={[
-              'grid grid-cols-[1.1fr_1.3fr_1fr_0.7fr_0.6fr_0.8fr_0.4fr] items-center gap-2 px-5 py-2.5 text-[0.7rem]',
+              `${cols} px-4 py-2 text-[0.66rem]`,
               i !== customers.length - 1 ? 'border-b border-border' : '',
             ].join(' ')}
           >
-            {/* Name */}
-            <div className="min-w-0">
-              <p className="truncate font-medium text-fg">{c.name}</p>
-              <p className="truncate font-mono text-[0.6rem] text-fg-subtle">
-                {c.id}
-              </p>
-            </div>
+            <p className="truncate font-medium text-fg">{c.name}</p>
 
-            {/* Email / Phone */}
-            <div className="min-w-0 space-y-0.5">
-              <p className="truncate text-fg-muted">{c.email}</p>
-              <p className="truncate font-mono text-[0.6rem] text-fg-subtle">
+            <div className="min-w-0 space-y-0.5 text-fg-muted">
+              <p className="flex items-center gap-1 truncate">
+                <Mail size={9} className="shrink-0 text-fg-subtle" strokeWidth={1.75} />
+                {c.email}
+              </p>
+              <p className="flex items-center gap-1 truncate font-mono text-[0.58rem]">
+                <Phone size={9} className="shrink-0 text-fg-subtle" strokeWidth={1.75} />
                 {c.phone}
               </p>
             </div>
 
-            {/* Source / Project */}
             <div className="min-w-0">
-              <SourceBadge source={c.source} />
-              <p className="mt-0.5 truncate text-[0.6rem] text-fg-subtle">
-                {c.project}
-              </p>
+              <span className="inline-flex max-w-full items-center truncate rounded-full border border-border px-1.5 py-0.5 text-[0.56rem] font-medium text-fg">
+                {c.source}
+              </span>
+              <p className="mt-0.5 truncate text-[0.58rem] text-fg-subtle">{c.project}</p>
             </div>
 
-            {/* Last Seen */}
             <span className="truncate text-fg-muted">{c.lastSeen}</span>
 
-            {/* Score */}
-            <ScoreBadge score={c.score} />
+            <span className="inline-flex w-fit items-center rounded-full bg-bg-sunken px-1.5 py-0.5 text-[0.56rem] font-semibold text-fg">
+              {c.score}
+            </span>
 
-            {/* Status */}
             <StatusBadge status={c.status} />
 
-            {/* Actions */}
             <div className="flex items-center justify-end gap-1.5">
-              <Eye size={12} className="text-fg-subtle" strokeWidth={1.75} />
-              <Trash2
-                size={12}
-                className="text-red-500 dark:text-red-400"
-                strokeWidth={1.75}
-              />
+              <Eye size={11} className="text-fg-muted" strokeWidth={1.75} />
+              <Trash2 size={11} className="text-red-500 dark:text-red-400" strokeWidth={1.75} />
             </div>
           </li>
         ))}
       </ul>
-
-      {/* Fade bottom edge */}
-      <div className="relative h-6">
-        <div className="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-b from-transparent to-bg-elevated" />
-      </div>
     </div>
-  );
-}
-
-function SourceBadge({ source }: { source: Source }) {
-  return (
-    <span className="inline-flex items-center rounded border border-border bg-bg-sunken px-1.5 py-0.5 text-[0.6rem] text-fg-muted">
-      {source}
-    </span>
-  );
-}
-
-function ScoreBadge({ score }: { score: Score }) {
-  const map = {
-    High: 'bg-blue-500 text-white',
-    Medium: 'bg-green-500 text-white',
-    Low: 'bg-red-500 text-white',
-    'Sync Failed':
-      'bg-amber-100 text-amber-800 border border-amber-300 dark:bg-amber-500/15 dark:text-amber-300 dark:border-amber-500/40',
-  } as const;
-  return (
-    <span
-      className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.6rem] font-medium ${map[score]}`}
-    >
-      {score === 'Sync Failed' && (
-        <AlertTriangle size={10} strokeWidth={2} />
-      )}
-      {score}
-    </span>
   );
 }
 
 function StatusBadge({ status }: { status: Status }) {
   if (status === 'synced') {
     return (
-      <span className="inline-flex items-center gap-1 text-[0.65rem] text-green-700 dark:text-green-400">
-        <CheckCircle2 size={11} strokeWidth={2} />
+      <span className="inline-flex items-center gap-1 text-[0.62rem] text-green-700 dark:text-green-400">
+        <CheckCircle2 size={10} strokeWidth={2} />
         synced
       </span>
     );
   }
   if (status === 'not_synced_yet') {
     return (
-      <span className="inline-flex items-center gap-1 text-[0.65rem] text-amber-700 dark:text-amber-400">
-        <Clock size={11} strokeWidth={2} />
+      <span className="inline-flex items-center gap-1 text-[0.62rem] text-amber-700 dark:text-amber-400">
+        <Clock size={10} strokeWidth={2} />
         not_synced_yet
       </span>
     );
   }
   return (
-    <span className="inline-flex items-center gap-1 text-[0.65rem] text-red-700 dark:text-red-400">
-      <CircleAlert size={11} strokeWidth={2} />
-      error_syncing_lead
+    <span className="inline-flex items-center gap-1 text-[0.62rem] text-red-700 dark:text-red-400">
+      <CircleAlert size={10} strokeWidth={2} />
+      sync_failed
     </span>
   );
 }
